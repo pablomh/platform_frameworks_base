@@ -1075,7 +1075,7 @@ public class Build {
             return result == 0;
         }
 
-        final String system = SystemProperties.get("ro.build.fingerprint");
+        final String system = SystemProperties.get("ro.system.build.fingerprint");
         final String vendor = SystemProperties.get("ro.vendor.build.fingerprint");
         final String odm_expected = SystemProperties.get("ro.odm.expect.version");
         final String odm = SystemProperties.get("ro.odm.version");
@@ -1086,7 +1086,7 @@ public class Build {
         final String currentRadio = SystemProperties.get("gsm.version.baseband");
 
         if (TextUtils.isEmpty(system)) {
-            Slog.e(TAG, "Required ro.build.fingerprint is empty!");
+            Slog.e(TAG, "Required ro.system.build.fingerprint is empty!");
             return false;
         }
 
